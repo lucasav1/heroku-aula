@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
 
     <marquee><h1>Lista de suas frases perfeitas</h1></marquee>
     {% for item in listar_coachs %}
         <p><strong>Nome do Coach:</strong> {{item.nome}}</p>
         <p><strong>Motive-se:</strong> {{item.frase}}</p>
         <p><strong>Quem foi sua inspiration:</strong>{{item.inspirador}}</p>
+        <a href="/coachs/delete/{{item.id}}">Deletar</a>
         <hr>
     {% endfor %}
     
-</body>
-</html>
+{% endblock %}

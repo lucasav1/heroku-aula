@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Seja seu Compromisso</h1>
-    <p>Cadastre sua frase coach.</p>
-    <p><a href="/coachs/listar">Clique aqui, para ver quem se cadastrou!</a></p>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+    <h1 class="titulo-index">Seja seu Compromisso</h1>
+    <p>Cadastre sua frase COACH.</p>
+    <p><a class="inspiracao" href="/coachs/listar">Clique aqui, para ver quem se cadastrou!</a></p>
     <p>{{sucesso}}</p>
 
     <form action="/" method="post">
@@ -18,13 +13,12 @@
         <input name="nome" type="text" required>
 
         <label for="">Frase Inspiradora: </label>
-        <textarea name="frase" id="" cols="30" rows="10" required> </textarea>
+        <input name="frase" id="" cols="30" rows="10" required> </input>
 
         <label for="">Pessoa que motivou: </label>
         <input name="inspirador" type="text">
 
         <input type="submit" value="Enviar">
     </form>
-
-</body>
-</html>
+    <img class="mindset" src="{% static 'images/coach.jpg' %}" alt="">
+{% endblock %}
