@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
-
+    <p><strong>{{msg}}</strong></p>
     <marquee><h1>Lista de suas frases perfeitas</h1></marquee>
     {% for item in listar_coachs %}
         <p><strong>Nome do Coach:</strong> {{item.nome}}</p>
@@ -10,5 +10,5 @@
         <a href="/coachs/delete/{{item.id}}">Deletar</a>
         <hr>
     {% endfor %}
-    
+
 {% endblock %}
