@@ -7,8 +7,14 @@
     <p><a class="inspiracao" href="/coachs/listar">Clique aqui, para ver quem se cadastrou!</a></p>
     <p>{{sucesso}}</p>
 
-    <form action="/" method="post">
+    <form action="/coachs/cadastro" method="post">
         {% csrf_token %}
+        <label for="email">email: </label>
+        <input name="email" type="email" required>
+
+        <label for="senha">senha: </label>
+        <input name="senha" type="password" required>
+
         <label for="">Nome: </label>
         <input name="nome" type="text" required>
 

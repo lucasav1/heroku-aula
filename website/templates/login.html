@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+    <h1 class="titulo-index">Login</h1>
+    <p>Não tem cadastro?</p>
+    <p> <a href="/coachs/cadastro">Clique aqui meu consagrado</a></p>
+    <p><a class="inspiracao" href="/coachs/listar">Clique aqui, para ver quem se cadastrou!</a></p>
+    <p>{{sucesso}}</p>
+    <p>{{msg}}</p>
+    <form action="/" method="post">
+        {% csrf_token %}
+        <label for="email">email: </label>
+        <input name="email" type="email" required>
+
+        <label for="senha">senha: </label>
+        <input name="senha" type="password" required>
+
+        <input type="submit" value="ENTRAR">
+    </form>
+{% endblock %}
