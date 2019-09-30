@@ -13,3 +13,5 @@ myenv
 vscode
 .vscode
 
+staticfiles
+*.sqlite3
